@@ -275,11 +275,11 @@ for round_ in range(rounds):
             model.classifier[i].weight.copy_(init_weights[1][i])
 
             # Now prune
-            model.masks[i + 2] = torch.reshape(model.masks[i + 2], (1, n_rows * n_cols)).squeeze()
+            model.masks[i + 5] = torch.reshape(model.masks[i + 5], (1, n_rows * n_cols)).squeeze()
             val = ((sparsity * 100) ** ((round_ + 1) / rounds)) / 100
 
-            model.masks[i + 2][indices[:math.ceil(val * n_rows * n_cols)]] = 0
-            model.masks[i + 2] = torch.reshape(torch.reshape(model.masks[i + 2], (1, n_rows * n_cols)).squeeze(),
+            model.masks[i + 5][indices[:math.ceil(val * n_rows * n_cols)]] = 0
+            model.masks[i + 5] = torch.reshape(torch.reshape(model.masks[i + 5], (1, n_rows * n_cols)).squeeze(),
                                                (n_rows, n_cols))
 
     print("Test Accuracy after pruning but no retraining:", test_model(test_loader, device, model))
