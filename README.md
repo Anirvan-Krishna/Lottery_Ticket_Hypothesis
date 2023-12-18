@@ -28,9 +28,9 @@ The code implements a pruning mechanism inspired by the Lottery Ticket Hypothesi
 
 ### Key Points:
 
--Sparse Subnetworks: Despite the over-parameterization in deep neural networks, there exist small, trainable subnetworks that achieve comparable performance.
--Iterative Pruning: The process involves iteratively pruning connections or weights based on their magnitudes and then retraining the pruned network to recover performance.
--Transferability: These winning tickets or sparse subnetworks can be transferred across different tasks and architectures.
+- Sparse Subnetworks: Despite the over-parameterization in deep neural networks, there exist small, trainable subnetworks that achieve comparable performance.
+- Iterative Pruning: The process involves iteratively pruning connections or weights based on their magnitudes and then retraining the pruned network to recover performance.
+- Transferability: These winning tickets or sparse subnetworks can be transferred across different tasks and architectures.
 
 Understanding this hypothesis aids in exploring strategies for network compression, acceleration, and understanding the underlying structure of deep learning models.
 
